@@ -1,6 +1,7 @@
 import sys
 from tkinter import *
-from tkinter import filedialog
+import tkinter.filedialog
+
 root=Tk("Text Editor")
 text=Text(root) 
 text.grid() 
@@ -10,7 +11,7 @@ def saveas():
 
     t = text.get("1.0", "end-1c")
 
-    savelocation=tkFileDialog.asksaveasfilename()
+    savelocation=tkinter.filedialog.asksaveasfilename()
 
     file1=open(savelocation, "w+")
 
@@ -19,5 +20,6 @@ def saveas():
     file1.close()
 button=Button(root, text="Save", command=saveas) 
 button.grid()
+
 
 root.mainloop()
